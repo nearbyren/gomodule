@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
-
+//业务处理层
 type auth struct {
 	Username string `valid:"Required; MaxSize(50)"`
 	Password string `valid:"Required; MaxSize(50)"`
@@ -33,7 +33,7 @@ func Login(c *gin.Context) {
 		appG.Response(http.StatusOK, consts.INVALID_PARAMS, nil)
 		return
 	}
-
+	//这里处理鉴权业务
 	authService := authentication.Auth{Username: username, Password: password}
 	isExist, err := authService.Check()
 	if err != nil {

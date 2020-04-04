@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+//校验token
 func Jwt() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var code int
@@ -36,7 +37,7 @@ func Jwt() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
-
+		//让程序继续走下去
 		c.Next()
 	}
 }

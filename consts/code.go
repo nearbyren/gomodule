@@ -1,5 +1,7 @@
 package consts
 
+
+//定义一些常规状态码
 const (
 	SUCCESS        = 200
 	ERROR          = 500
