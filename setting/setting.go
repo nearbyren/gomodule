@@ -29,9 +29,9 @@ var config *ini.File
 
 func Setup() {
 	var err error
-	config, err = ini.Load("config/app.ini")
+	config, err = ini.Load("conf/app.ini")
 	if err != nil {
-		log.Fatal("Fail to parse 'config/app.ini': %v", err)
+		log.Fatal("Fail to parse 'conf/app.ini': %v1", err)
 	}
 	mapTo("app", AppSetting)
 	mapTo("server", ServerSetting)
@@ -41,7 +41,7 @@ func Setup() {
 func mapTo(section string, v interface{}) {
 	err := config.Section(section).MapTo(v)
 	if err != nil {
-		log.Fatalf("Cfg.MapTo RedisSetting err: %v", err)
+		log.Fatalf("Cfg.MapTo RedisSetting err: %v1", err)
 	}
 }
 
